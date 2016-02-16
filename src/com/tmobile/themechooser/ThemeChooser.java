@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010, T-Mobile USA, Inc.
+ * Copyright (C) 2016 The Altair ROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,7 +212,8 @@ public class ThemeChooser extends Activity {
             int selectedPos = mGallery.getSelectedItemPosition();
             ThemeItem item = (ThemeItem)mGallery.getItemAtPosition(selectedPos);
             if (!item.hasHostDensity()) {
-                showDialog(DIALOG_MISSING_HOST_DENSITY);
+                //showDialog(DIALOG_MISSING_HOST_DENSITY);
+                doApply(item);
                 return;
             }
             if (!item.hasThemePackageScope()) {
